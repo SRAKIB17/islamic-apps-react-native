@@ -10,10 +10,8 @@ const CategoryDuaScreen = (props: ScreenProps) => {
     const find_sub_category = sub_category?.filter(r => r?.catID == catID);
     const router = useRouter();
     useEffect(() => {
-        setLoadingComponent(true)
         setTitle(`${find?.bnCategory}`)
-        setLoadingComponent(false)
-    }, [catID]);
+    }, [catID, find, router]);
 
     return (
         <SafeAreaView>

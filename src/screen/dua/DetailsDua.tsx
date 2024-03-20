@@ -4,6 +4,7 @@ import { ScreenProps, StyledText, useRouter, useTheme } from 'react-native-route
 import { assets_images } from '../../assets';
 import { global_styles } from '../../components';
 import dua_db from "../../db/dua.json";
+import { hexToRgba } from '../../hooks';
 const DetailsDua = (props: ScreenProps) => {
     const { params: { catID, subcatID }, setTitle, setLoadingComponent } = props
     const { colors } = useTheme();
@@ -13,34 +14,30 @@ const DetailsDua = (props: ScreenProps) => {
 
     const router = useRouter();
     useEffect(() => {
-        setLoadingComponent(true)
         setTitle(`${find_sub_category?.bnSubcategory}`)
-        setLoadingComponent(false)
-    }, [catID]);
+    }, [catID, subcatID, router]);
 
     return (
         <SafeAreaView>
             <ScrollView>
-                <View style={{ gap: 16, justifyContent: 'flex-end', flex: 1 }}>
+                <View style={{ gap: 16, justifyContent: 'flex-end', flex: 1, paddingVertical: 16 }}>
                     {
                         find_dua_details?.map((dua, index) => {
                             return (
                                 <ImageBackground
+                                    key={index}
+                                    style={{
+                                        backgroundColor: hexToRgba(`${colors?.primary}`, 0.04)
+                                    }}
                                     source={assets_images?.dua?.bg_dua}
                                     // imageStyle={{ bottom: 0, objectFit: "cover" }}
                                     resizeMode='contain'
                                 >
                                     <View key={index} style={{
                                         padding: 16,
-                                        shadowColor: colors?.primary,
-                                        shadowOffset: {
-                                            width: 0,
-                                            height: 2,
-                                        },
-                                        shadowOpacity: 0.25,
-                                        shadowRadius: 3.84,
-                                        elevation: 1,
-                                        gap: 16
+                                        borderColor: hexToRgba(`${colors?.primary}`, 0.1),
+                                        borderTopWidth: 1,
+                                        borderBottomWidth: 1
                                     }}>
 
                                         <StyledText style={[

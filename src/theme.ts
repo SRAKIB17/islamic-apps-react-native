@@ -1,6 +1,6 @@
 export const ThemeColor = {
     dark: {
-        primary: '#0A84FF',
+        primary: '#672CBC',
         primary_text: 'white',
         background: 'rgb(1, 1, 1)', // Dark background
         card: '#121212', // Dark card/container background
@@ -24,7 +24,7 @@ export const ThemeColor = {
         dark_grey: '#272727', // Darker shade of grey
     },
     default: {
-        primary: '#007AFF',
+        primary: '#672CBC',
         background: 'rgb(242, 242, 242)',
         card: 'white',
         text: 'rgb(28, 28, 30)',

@@ -19,7 +19,7 @@
     "react-native-document-picker": "^9.0.1",
     "react-native-fs": "^2.20.0",
     "react-native-qrcode-svg": "^6.2.0",
-    "react-native-router-screen": "^1.0.43",
+    "react-native-router-screen": "^1.0.48",
     "react-native-svg": "^13.14.0"
   },
   "devDependencies": {
